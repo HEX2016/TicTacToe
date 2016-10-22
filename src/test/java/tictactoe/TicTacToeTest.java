@@ -28,7 +28,7 @@ public class TicTacToeTest {
 
     @Test
     public void testWin() throws WrongInputException {
-        game.setField(0,0,'X');
+        assertEquals('-', game.setField(0, 0, 'X'));
         assertEquals('-', game.setField(1, 0, 'O'));
         assertEquals('-', game.setField(1, 1, 'X'));
         assertEquals('-', game.setField(0, 1, 'O'));
