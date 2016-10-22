@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
-	private TicTacToe game = new TicTacToe();
+	private TicTacToeLogic game = new TicTacToeLogic();
 
     @Test
     public void testWorld()  throws WrongInputException {
@@ -20,7 +20,7 @@ public class TicTacToeTest {
 
     @Test
     public void testPlay() throws WrongInputException {
-        game.setField(0,0,'X');
+        game.setField(0,0);
         assertEquals('X', game.getField(0,0)); // test if setting field worked
         assertEquals('-', game.getField(1,0)); // test if setting field wrote too may fields
         assertEquals(1, game.getMoves());
@@ -28,22 +28,22 @@ public class TicTacToeTest {
 
     @Test
     public void testWin() throws WrongInputException {
-        assertEquals('-', game.setField(0, 0, 'X'));
-        assertEquals('-', game.setField(1, 0, 'O'));
-        assertEquals('-', game.setField(1, 1, 'X'));
-        assertEquals('-', game.setField(0, 1, 'O'));
-        assertEquals('X', game.setField(2, 2, 'X'));
+        assertEquals('-', game.setField(0, 0));
+        assertEquals('-', game.setField(1, 0));
+        assertEquals('-', game.setField(1, 1));
+        assertEquals('-', game.setField(0, 1));
+        assertEquals('X', game.setField(2, 2));
     }
 
     @Test(expected=WrongInputException.class) 
     public void testWrongInput() throws WrongInputException{
-        assertEquals('-', game.setField(44, 1, 'X'));
+        assertEquals('-', game.setField(44, 1));
     }
 
     @Test(expected=WrongInputException.class) 
     public void testInvalidInput() throws WrongInputException{
-        assertEquals('-', game.setField(1, 1, 'X'));
-        assertEquals('-', game.setField(1, 1, 'O'));
+        assertEquals('-', game.setField(1, 1));
+        assertEquals('-', game.setField(1, 1));
            
     }
 

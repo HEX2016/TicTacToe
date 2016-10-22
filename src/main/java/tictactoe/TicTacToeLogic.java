@@ -1,28 +1,11 @@
 
 package tictactoe;
 
-public class TicTacToe{
+public class TicTacToeLogic{
 	public static final int SIZE = 3;
-	private char[][] board = new char[3][3];
-	private int currentPlayer = 1;
+	public static final char[] player = {'X', 'O'};
+	private Board board = new Board(SIZE);
 	private int numberOfMoves = 0;
-
-	/**
-	* Initializes the board, set all fields as '-'
-	* automatically run by the constructor.
-	*/
-	private void initializeBoard(){
-		for (int i = 0; i < SIZE; i++)
-			for (int j = 0; j < SIZE; j++)
-				board[i][j] = '-';
-	}
-
-	/** 
-	* Constructor for TicTacToe
-	*/
-	public TicTacToe(){
-		initializeBoard();
-	}
 
 	/**
 	 * Get number of moves for this game.
@@ -41,7 +24,7 @@ public class TicTacToe{
 	 * @return the symbol for the given field
 	 */
 	public char getField(int row, int column) {
-		return board[row][column];
+		return this.board.getField(row, column);
 	}
 
 	/**
@@ -49,18 +32,14 @@ public class TicTacToe{
 	 * 
 	 * @param row which row you want to place your mark
 	 * @param column which column you want to place your mark
+	 * @throws WrongInputException if row/column is out of bounds, already occupied or if value is neither X or O.
 	 */
-	public char setField(int row, int column, char value) throws WrongInputException {
-		if (row < 0 || row >= SIZE || column < 0 || column >=SIZE){
-			throw new WrongInputException("Index out of bounds");
-		}
+	public char setField(int row, int column) throws WrongInputException {
 		
-		if(this.board[row][column] != '-'){
-			throw new WrongInputException("Field already in use");
-		}
-
-		this.board[row][column] = value;
+		int currPlayer = numberOfMoves % 2;
+		this.board.setField(row, column, player[currPlayer]);
 		this.numberOfMoves++;
+
 		return checkWin();
 	}
 
@@ -73,14 +52,14 @@ public class TicTacToe{
 		char temp = 0;
 		boolean isWinner = true;
 		
-		temp = board[0][0];
+		temp = this.board.getField(0,0);
 		
 		// horizontal check
 		for (int p=0; p<SIZE; p++) {
-			temp = board[p][0];
+			temp = this.board.getField(p, 0);
 			isWinner = true;
 			for(int q=1; q<SIZE; q++) {
-				if(board[p][q] != temp) {
+				if(this.board.getField(p, q) != temp) {
 					isWinner = false;					
 				}
 			}
@@ -91,10 +70,10 @@ public class TicTacToe{
 		
 		// vertical checking
 		for (int q=0; q<SIZE; q++) {
-			temp = board[0][q];
+			temp = this.board.getField(0, q);
 			isWinner = true;
 			for (int p = 1; p<SIZE;p++) {
-				if(board[p][q] != temp) {
+				if(this.board.getField(p, q) != temp) {
 					isWinner = false;
 				}
 			}
@@ -105,11 +84,11 @@ public class TicTacToe{
 		
 
 		// cross checking: (hardcoded size)
-		if (board[0][0] == board[1][1] && board[1][1] == board[2][2] )
-			return board[0][0];
+		if (this.board.getField(0, 0) == this.board.getField(1, 1) && this.board.getField(1, 1) == this.board.getField(2, 2) )
+			return this.board.getField(0, 0);
 		
-		if (board[2][0] == board[1][1] && board[1][1] == board[0][2] )
-			return board[2][0];
+		if (this.board.getField(2, 0) == this.board.getField(1, 1) && this.board.getField(1, 1) == this.board.getField(0, 2) )
+			return this.board.getField(2, 0);
 		
 		// no winner, return 0
 		return '-';
