@@ -50,13 +50,25 @@ public class TicTacToe{
 	 * @param row which row you want to place your mark
 	 * @param column which column you want to place your mark
 	 */
-	public char setField(int row, int column, char value) {
+	public char setField(int row, int column, char value) throws WrongInputException {
+		if (row < 0 || row >= SIZE || column < 0 || column >=SIZE){
+			throw new WrongInputException("Index out of bounds");
+		}
+		
+		if(this.board[row][column] != '-'){
+			throw new WrongInputException("Field already in use");
+		}
+
 		this.board[row][column] = value;
 		this.numberOfMoves++;
 		return checkWin();
-
 	}
 
+	/**
+	 * Returns the symbol for given field, if it is available (-) or occupied by another player (O or X)
+	 * 
+	 * @return the symbol for the given field
+	 */
 	private char checkWin() {
 		char temp = 0;
 		boolean isWinner = true;
