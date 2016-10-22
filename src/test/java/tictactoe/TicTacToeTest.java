@@ -22,6 +22,8 @@ public class TicTacToeTest {
     @Test
     public void testPlay() {
         game.setField(0,0,'X');
-        assertEquals('X', game.getField(0,0));
+        assertEquals('X', game.getField(0,0)); // test if setting field worked
+        assertEquals('-', game.getField(1,0)); // test if setting field wrote too may fields
+        assertEquals(1, game.getMoves());
     }
 }

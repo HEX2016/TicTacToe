@@ -5,6 +5,7 @@ public class TicTacToe{
 	public static final int SIZE = 3;
 	private char[][] board = new char[3][3];
 	private int currentPlayer = 1;
+	private int numberOfMoves = 0;
 
 	/**
 	* Initializes the board, set all fields as '-'
@@ -21,6 +22,10 @@ public class TicTacToe{
 	*/
 	public TicTacToe(){
 		initializeBoard();
+	}
+
+	public int getMoves() {
+		return this.numberOfMoves;
 	}
 
 	/**
@@ -42,6 +47,7 @@ public class TicTacToe{
 	 */
 	public void setField(int row, int column, char value) {
 		this.board[row][column] = value;
+		this.numberOfMoves++;
 	}
 
 }
