@@ -4,12 +4,7 @@ import org.junit.Test;
 
 public class TicTacToeTest {
 
-	private TicTacToeLogic game = new TicTacToeLogic();
-
-    @Test
-    public void testWorld()  throws WrongInputException {
-        assertEquals("Hello world", TicTacToeController.world());
-    }
+	private TicTacToeLogic game = new TicTacToeLogic(3);
 
     @Test
     public void testInit()  throws WrongInputException {

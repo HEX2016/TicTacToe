@@ -2,11 +2,14 @@
 package tictactoe;
 
 public class TicTacToeLogic{
-	public static final int SIZE = 3;
+	public static int SIZE = 3;
 	public static final char[] player = {'X', 'O'};
 	private Board board = new Board(SIZE);
 	private int numberOfMoves = 0;
 
+	public TicTacToeLogic(int size){
+		this.SIZE = size;
+	}
 	/**
 	 * Get number of moves for this game.
 	 * 
@@ -14,6 +17,10 @@ public class TicTacToeLogic{
 	 */
 	public int getMoves() {
 		return this.numberOfMoves;
+	}
+
+	public char whosNext() {
+		return this.player[numberOfMoves%2];
 	}
 
 	/**
