@@ -24,10 +24,24 @@ public class TicTacToe{
 	}
 
 	/**
-	*
-	*/
+	 * Returns the symbol for given field, if it is available (-) or occupied by another player (O or X)
+	 * 
+	 * @param row which row you want to chekc
+	 * @param column which column you want to check
+	 * @return the symbol for the given field
+	 */
 	public char getField(int row, int column) {
 		return board[row][column];
+	}
+
+	/**
+	 * Let user choose the next field
+	 * 
+	 * @param row which row you want to place your mark
+	 * @param column which column you want to place your mark
+	 */
+	public void setField(int row, int column, char value) {
+		this.board[row][column] = value;
 	}
 
 }

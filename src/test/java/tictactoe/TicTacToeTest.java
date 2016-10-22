@@ -18,4 +18,10 @@ public class TicTacToeTest {
     		for (int j = 0; j < game.SIZE; j++)
     			assertEquals('-', game.getField(i,j));
     }
+
+    @Test
+    public void testPlay() {
+        game.setField(0,0,'X');
+        assertEquals('X', game.getField(0,0));
+    }
 }
