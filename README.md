@@ -14,6 +14,7 @@
 ### git merge test
 ### git push origin master
 
+# Create pull requests:
 # Local:
 ### Búa til nýtt branch:
 ### git checkout -b NyttBranch
