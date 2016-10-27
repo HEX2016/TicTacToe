@@ -6,7 +6,6 @@ public class TicTacToe {
 	
 	public void newGame() {
 		TicTacToeLogic game = new TicTacToeLogic(3);
-
 		Scanner in = new Scanner(System.in);
 		int count = 0;
 		while(true) {
@@ -20,12 +19,11 @@ public class TicTacToe {
 				System.out.println("Enter two numbers (row column):");
 				int p = in.nextInt();
 				int q = in.nextInt();
-				
 				if(game.setField(p,q) == '-') {
 					printBoard(game);
 				}
 				else{
-					System.out.println("Player " + player + "wins");
+					System.out.println("Player " + player + " wins");
 					break;
 				}
 			}
