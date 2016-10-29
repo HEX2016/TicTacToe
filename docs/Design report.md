@@ -1,7 +1,4 @@
-#TicTacToe design report
-
-
-<img src="http://www.ru.is/media/hr/skjol/default_white.png" width="150" height="150" />
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe design report
 
 | Students                  | Ssn         |
 |---------------------------|:-----------:|

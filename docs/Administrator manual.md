@@ -1,6 +1,4 @@
-# TicTacToe handbók kerfisstjóra
-
-<img src="http://www.ru.is/media/hr/skjol/default_white.png" width="150" height="150" />
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe handbók kerfisstjóra
 
 | Students                  | Ssn         |
 |---------------------------|:-----------:|

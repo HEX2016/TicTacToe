@@ -1,7 +1,5 @@
 # <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" /> TicTacToe Development manual 
 
-
-
 | Students                  | Ssn         |
 |---------------------------|:-----------:|
 |Ágúst Aðalsteinsson        | 221191-3319 |
