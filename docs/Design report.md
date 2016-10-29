@@ -29,6 +29,10 @@ Initial design:
 <img src="ClassDiagram.png" />
 
 
+### Classes after implementation
+
+During the implementation process we changed and refactored the classes a bit:
+
 1. Board
   * Holds the board/fields for the game platform.
   * Has methods for placing a player on field and checking if a player is placed on field.
