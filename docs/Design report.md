@@ -1,4 +1,4 @@
-# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe Design report
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe Design Report
 
 | Students                  | SSN         |
 |---------------------------|:-----------:|
