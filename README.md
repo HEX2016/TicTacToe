@@ -28,6 +28,10 @@
 ### Senda á github
 ### git push -u origin NyttBranch
 
+# Keyra .Jar file
+### ./gradle build eða ./gradlew build
+### svo java -jar /build/libs/TicTacToe.jar
+
 # Á github:
 ### Við push kemur tilkynning fram á github – you recently pushed branches. Smella á Compare and pull branches –  smella á Create pull request.  Við það hrekkur í gang test á Travis og sýnir niðurstöðu á github. Ef allt er fínt er hægt að smella á Merge pull request.
 
