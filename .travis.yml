@@ -1,3 +1,13 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
+deploy:
+  provider: releases
+  api_key:
+    secure: WmnSkwn+vrPgWoPWOIb1dN48lBWcvlOefbkcDod4nUqMY7XHnyPDAGzrQWDSB9HRy5F9+bV3hqV1foZnVwePTH7XRD7R0cUETLa3KPTiiFIbvzCsZMnU9Tkf1/mu0xqOPTAXZP7eLnlwS7QO88UN4kfnH0oxBUOLvS8JiBcNBdp/pP2ORulOyxJbeF6PRKvG+mLpnu+zpGQ70XNu+yivpKlN3OPOUqJ7HFm8yufHJy6zHStaeLBx9vNAIlIMp5CBJqNMaKO3QvFri1BdYRw2d5mRz0BXRruNBRTAin2OWHhv5wM5TTAv+O1UFVKTuJZKk4MiPC2UeVFiu1I3zaTfP5cPQ7B6crz+BgbCpBBWWQrLgWDarVo1nmmWGIGPfsxzVM7C/x1NTDzpjvFV4DFwC5CfgnTwZLjock1NK0THMUHuzYTv4rG+0fMLs2z36l9/pdSlz+JUZmXHuoa7oVQNQ3bei6sYCv+P5dgbXQcscB5g+PsUKoCNx5s3swvR5cRJZ+8FHvyD9EE6uzmHirlwEnMMfKOTIY4yzk0oOoHXzZx9H1veOOlpRjeYKba5E9JkcTFNog2EK+PHwljOI8BoTb5Nt56aWDnmJnJQKfFItPle1+YwSqOS8hDNKUyq+NEDdj+yUEHkYg1IlMx+22Pe4GFK/YB2+BuNykknZ0/AgDk=
+  file: "/build/libs/TicTacToe.jar"
+  skip_cleanup: true
+  on:
+    repo: HEX2016/TicTacToe
+    branch: JarFileCreation
+    tags: true
