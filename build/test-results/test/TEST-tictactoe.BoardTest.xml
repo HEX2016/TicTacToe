@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tictactoe.BoardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-10-27T21:44:36" hostname="DonDewey" time="0.005">
+<testsuite name="tictactoe.BoardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-10-29T15:19:22" hostname="NYH1016" time="0.002">
   <properties/>
-  <testcase name="testWrongIdentifier" classname="tictactoe.BoardTest" time="0.004"/>
-  <testcase name="testOccupied" classname="tictactoe.BoardTest" time="0.001"/>
+  <testcase name="testWrongIdentifier" classname="tictactoe.BoardTest" time="0.002"/>
+  <testcase name="testOccupied" classname="tictactoe.BoardTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
