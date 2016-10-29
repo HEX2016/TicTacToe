@@ -1,6 +1,6 @@
-# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe design report
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe Design report
 
-| Students                  | Ssn         |
+| Students                  | SSN         |
 |---------------------------|:-----------:|
 |Ágúst Aðalsteinsson        | 221191-3319 |
 |Egill Gautur Steingrímsson | 051191-2859 |

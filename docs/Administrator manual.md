@@ -1,6 +1,6 @@
-# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe handbók kerfisstjóra
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="75" height="75" />  TicTacToe Administration Manual
 
-| Students                  | Ssn         |
+| Students                  | SSN         |
 |---------------------------|:-----------:|
 |Ágúst Aðalsteinsson        | 221191-3319 |
 |Egill Gautur Steingrímsson | 051191-2859 |
@@ -18,8 +18,6 @@ This manual is about how to set up and run the game after deploying.
 ## Directions
 
 ADD INFORMATION HERE
-
-## Meginmál
 
 Forritið er hýst á github á slóðinni: https://github.com/HEX2016/tictactoe.git
 Hægt er að sjá sögu útgáfna á https://travis-ci.org/HEX2016/TicTacToe 
