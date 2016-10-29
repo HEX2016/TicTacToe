@@ -1,7 +1,7 @@
 #TicTacToe Development manual
-
-
 <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="150" height="150" />
+
+
 
 | Students                  | Ssn         |
 |---------------------------|:-----------:|
