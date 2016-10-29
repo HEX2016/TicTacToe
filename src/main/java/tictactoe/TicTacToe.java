@@ -47,6 +47,7 @@ public class TicTacToe {
 
 	/**
 	 * Prints the current board status
+	 * @param currentGame game variable to show.
 	 */
 	public void printBoard(TicTacToeLogic currentGame){
 		for (int i = 0; i<3;i++){

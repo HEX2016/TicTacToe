@@ -7,10 +7,10 @@ public class TicDatabase {
 	private String nameList = "winners.txt";
 	private FileWriter list = null;
 
-	/**
+	/**************************************************************
 	* insertName inserts a new name of winner to the winners list
 	* @param name Name of the current round winner
-	*/
+	***************************************************************/
 	public void insertName(String name)
 	{
 		try{
@@ -29,11 +29,11 @@ public class TicDatabase {
 		}
 	}
 
-	/**
+	/**************************************************************
 	* getTopList() returns top 5 players list to show when game starts
 	*
 	* @return String with top 5 players in correct order (from private function)
-	*/
+	***************************************************************/
 	public String getTopList()
 	{
 		File f = new File(nameList);
@@ -61,12 +61,12 @@ public class TicDatabase {
 
 	}
 
-	/**
+	/**************************************************************
 	* getTopList() returns top 5 players list to show when game starts
 	*
 	* @return String with top 5 players in correct order with line breaks between
 	* If no winners are registered, it will return an empty String.
-	*/
+	***************************************************************/
 	private String groupBy(ArrayList<String> unordered){
 		if (unordered.size() < 1) return "";
 
