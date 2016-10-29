@@ -1,9 +1,9 @@
-#TicTacToe þróunarskýrsla
+#TicTacToe Development manual
 
 
-[logo]: http://www.ru.is/media/hr/skjol/default_white.png
+[![logo](http://www.ru.is/media/hr/skjol/default_white.png)]
 
-| Students                  | ssn         |
+| Students                  | Ssn         |
 |---------------------------|:-----------:|
 |Ágúst Aðalsteinsson        | 221191-3319 |
 |Egill Gautur Steingrímsson | 051191-2859 |
