@@ -1,7 +1,7 @@
 #TicTacToe hönnunarskýrsla
 
 
-[![logo](http://www.ru.is/media/hr/skjol/default_white.png =200x200)]
+[![logo](http://www.ru.is/media/hr/skjol/default_white.png | width=100)]
 
 | Students                  | Ssn         |
 |---------------------------|:-----------:|
