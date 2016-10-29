@@ -1,3 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
+deploy:
+  provider: releases
+  api_key: b32b05a4c47fe1638b5935b1769e8155d48aecba
+  file: "/build/libs/TicTacToe.jar"
+  skip_cleanup: true
+  on:
+    tags: true
