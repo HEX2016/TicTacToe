@@ -1,6 +1,8 @@
-#TicTacToe HönnunarskýrslaTicTacToe Hönnunarskýrsla
+#TicTacToe hönnunarskýrsla
+
 
 [logo]: http://www.ru.is/media/hr/skjol/default_white.png
+
 
 |------------------------------------------------------------------------------------------:|
 |                                                         Ágúst Aðalsteinsson – 221191-3319 |

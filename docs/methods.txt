@@ -1,5 +1,0 @@
-void newGame()
-void playerTurn(player)
-void printGameBoard()
-void updateGameStatus()
-void gameEnd()
