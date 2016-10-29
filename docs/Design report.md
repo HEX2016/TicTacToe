@@ -24,6 +24,11 @@ The game has a simple command line interface for two players.
 
 ## Class overview
 
+Initial design:
+
+<img src="ClassDiagram.png" />
+
+
 1. Board
   * Holds the board/fields for the game platform.
   * Has methods for placing a player on field and checking if a player is placed on field.
