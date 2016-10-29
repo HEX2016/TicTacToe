@@ -1,4 +1,4 @@
-#TicTacToe Development manual <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="50" height="50" />
+# <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="50" height="50" /> TicTacToe Development manual 
 
 
 
