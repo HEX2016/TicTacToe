@@ -13,7 +13,7 @@
 |Sveinn Björnsson           | 091085-2329 |
 |Þórdís Þórðardóttir        | 110961-5619 |
 
-## abstract
+## Abstract
 
 TicTacToe is a game where two players compete about getting three "X" or "O" in a row of a two-way array. The project is about designing and implementing the game.
 
@@ -28,18 +28,18 @@ The game has a simple command line interface for two players.
 ## Class overview
 
 1. Board
-..* Holds the board/fields for the game platform.
-..* Has methods for placing a player on field and checking if a player is placed on field.
+..1 Holds the board/fields for the game platform.
+..1 Has methods for placing a player on field and checking if a player is placed on field.
 2. TicTacToeLogic
-..* Logic for the board.
-..* Has public methods API for gameplay.
-..* Checks after placing a player if he has won and returns it to the user interface (char)
+..1 Logic for the board.
+..1 Has public methods API for gameplay.
+..1 Checks after placing a player if he has won and returns it to the user interface (char)
 3. TicTacToe
-..* Gameplay class, has user interface with command input/output.
-..* Has instance of TicTacToeLogic and uses its API calls for playing the game.
-..* runs a input loop until all board places are busy or a player wins.
-..* prints out current board status after eacy play.
+..1 Gameplay class, has user interface with command input/output.
+..1 Has instance of TicTacToeLogic and uses its API calls for playing the game.
+..1 runs a input loop until all board places are busy or a player wins.
+..1 prints out current board status after eacy play.
 4. WrongInputException
-..* Exception class to be thrown if wrong input is received by user.
+..1 Exception class to be thrown if wrong input is received by user.
 
 
