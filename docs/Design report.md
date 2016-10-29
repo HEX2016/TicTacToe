@@ -29,17 +29,17 @@ The game has a simple command line interface for two players.
 
 1. Board
   * Holds the board/fields for the game platform.
-..1. Has methods for placing a player on field and checking if a player is placed on field.
+  * Has methods for placing a player on field and checking if a player is placed on field.
 2. TicTacToeLogic
-..1 Logic for the board.
-..1 Has public methods API for gameplay.
-..1 Checks after placing a player if he has won and returns it to the user interface (char)
+  * Logic for the board.
+  * Has public methods API for gameplay.
+  * Checks after placing a player if he has won and returns it to the user interface (char)
 3. TicTacToe
-..1 Gameplay class, has user interface with command input/output.
-..1 Has instance of TicTacToeLogic and uses its API calls for playing the game.
-..1 runs a input loop until all board places are busy or a player wins.
-..1 prints out current board status after eacy play.
+  * Gameplay class, has user interface with command input/output.
+  * Has instance of TicTacToeLogic and uses its API calls for playing the game.
+  * runs a input loop until all board places are busy or a player wins.
+  * prints out current board status after eacy play.
 4. WrongInputException
-..1 Exception class to be thrown if wrong input is received by user.
+  * Exception class to be thrown if wrong input is received by user.
 
 
