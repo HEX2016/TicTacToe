@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/HEX2016/TicTacToe.svg?branch=master)](https://travis-ci.org/HEX2016/TicTacToe)
+[![codecov](https://codecov.io/gh/HEX2016/TicTacToe/branch/master/graph/badge.svg)](https://codecov.io/gh/HEX2016/TicTacToe)
 
 # TicTacToe
 
