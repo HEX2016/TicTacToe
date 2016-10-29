@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TicTacToeLogic.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">tictactoe</a> &gt; <span class="el_source">TicTacToeLogic.java</span></div><h1>TicTacToeLogic.java</h1><pre class="source lang-java linenums">
+package tictactoe;
+
+public class TicTacToeLogic{
+<span class="fc" id="L5">	public static int SIZE = 3;</span>
+<span class="fc" id="L6">	public static final char[] player = {'X', 'O'};</span>
+<span class="fc" id="L7">	private Board board = new Board(SIZE);</span>
+<span class="fc" id="L8">	private int numberOfMoves = 0;</span>
+
+<span class="fc" id="L10">	public TicTacToeLogic(int size){</span>
+<span class="fc" id="L11">		this.SIZE = size;</span>
+<span class="fc" id="L12">	}</span>
+	/**
+	 * Get number of moves for this game.
+	 * 
+	 * @return how many moves have been made in the game
+	 */
+	public int getMoves() {
+<span class="fc" id="L19">		return this.numberOfMoves;</span>
+	}
+
+	public char whosNext() {
+<span class="nc" id="L23">		return this.player[numberOfMoves%2];</span>
+	}
+
+	/**
+	 * Returns the symbol for given field, if it is available (-) or occupied by another player (O or X)
+	 * 
+	 * @param row which row you want to chekc
+	 * @param column which column you want to check
+	 * @return the symbol for the given field
+	 */
+	public char getField(int row, int column) {
+<span class="fc" id="L34">		return this.board.getField(row, column);</span>
+	}
+
+	/**
+	 * Let user choose the next field
+	 * 
+	 * @param row which row you want to place your mark
+	 * @param column which column you want to place your mark
+	 * @throws WrongInputException if row/column is out of bounds, already occupied or if value is neither X or O.
+	 */
+	public char setField(int row, int column) throws WrongInputException {
+		
+<span class="fc" id="L46">		int currPlayer = numberOfMoves % 2;</span>
+<span class="fc" id="L47">		this.board.setField(row, column, player[currPlayer]);</span>
+<span class="fc" id="L48">		this.numberOfMoves++;</span>
+
+<span class="fc" id="L50">		return checkWin();</span>
+	}
+
+	/**
+	 * Returns the symbol for given field, if it is available (-) or occupied by another player (O or X)
+	 * 
+	 * @return the symbol for the given field
+	 */
+	private char checkWin() {
+<span class="fc" id="L59">		char temp = 0;</span>
+<span class="fc" id="L60">		boolean isWinner = true;</span>
+		
+<span class="fc" id="L62">		temp = this.board.getField(0,0);</span>
+		
+		// horizontal check
+<span class="fc bfc" id="L65" title="All 2 branches covered.">		for (int p=0; p&lt;SIZE; p++) {</span>
+<span class="fc" id="L66">			temp = this.board.getField(p, 0);</span>
+<span class="fc" id="L67">			isWinner = true;</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">			for(int q=1; q&lt;SIZE; q++) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">				if(this.board.getField(p, q) != temp) {</span>
+<span class="fc" id="L70">					isWinner = false;					</span>
+				}
+			}
+<span class="fc bfc" id="L73" title="All 2 branches covered.">			if(isWinner) {</span>
+<span class="fc" id="L74">				return temp;</span>
+			}
+		}
+		
+		// vertical checking
+<span class="fc bfc" id="L79" title="All 2 branches covered.">		for (int q=0; q&lt;SIZE; q++) {</span>
+<span class="fc" id="L80">			temp = this.board.getField(0, q);</span>
+<span class="fc" id="L81">			isWinner = true;</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">			for (int p = 1; p&lt;SIZE;p++) {</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">				if(this.board.getField(p, q) != temp) {</span>
+<span class="fc" id="L84">					isWinner = false;</span>
+				}
+			}
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">			if(isWinner) {</span>
+<span class="nc" id="L88">				return temp;</span>
+			}
+		}
+		
+
+		// cross checking: (hardcoded size)
+<span class="pc bpc" id="L94" title="2 of 4 branches missed.">		if (this.board.getField(0, 0) == this.board.getField(1, 1) &amp;&amp; this.board.getField(1, 1) == this.board.getField(2, 2) )</span>
+<span class="fc" id="L95">			return this.board.getField(0, 0);</span>
+		
+<span class="nc bnc" id="L97" title="All 4 branches missed.">		if (this.board.getField(2, 0) == this.board.getField(1, 1) &amp;&amp; this.board.getField(1, 1) == this.board.getField(0, 2) )</span>
+<span class="nc" id="L98">			return this.board.getField(2, 0);</span>
+		
+		// no winner, return 0
+<span class="nc" id="L101">		return '-';</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
