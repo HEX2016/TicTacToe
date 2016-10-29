@@ -28,8 +28,8 @@ The game has a simple command line interface for two players.
 ## Class overview
 
 1. Board
-..1 Holds the board/fields for the game platform.
-..1 Has methods for placing a player on field and checking if a player is placed on field.
+⋅⋅1. Holds the board/fields for the game platform.
+..1. Has methods for placing a player on field and checking if a player is placed on field.
 2. TicTacToeLogic
 ..1 Logic for the board.
 ..1 Has public methods API for gameplay.
