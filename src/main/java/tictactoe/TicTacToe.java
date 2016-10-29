@@ -3,9 +3,14 @@ package tictactoe;
 import java.util.Scanner;
 
 public class TicTacToe {
-	
+	private TicDatabase db = new TicDatabase();
+
 	public void newGame() {
 		TicTacToeLogic game = new TicTacToeLogic(3);
+		
+		System.out.println("For inspiration, here is the top 5 winners list:");
+		System.out.println(db.getTopList());
+
 		Scanner in = new Scanner(System.in);
 		int count = 0;
 		while(true) {
@@ -24,6 +29,11 @@ public class TicTacToe {
 				}
 				else{
 					System.out.println("Player " + player + " wins");
+					Scanner win_in = new Scanner(System.in);
+					System.out.println("Enter your name: ");
+					String winner = win_in.nextLine();
+					db.insertName(winner);
+					System.out.println("Congratulations "+winner);
 					break;
 				}
 			}
@@ -37,6 +47,7 @@ public class TicTacToe {
 
 	/**
 	 * Prints the current board status
+	 * @param currentGame game variable to show.
 	 */
 	public void printBoard(TicTacToeLogic currentGame){
 		for (int i = 0; i<3;i++){
