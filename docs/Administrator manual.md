@@ -1,6 +1,6 @@
 # TicTacToe handbók kerfisstjóra
 
-[![logo](http://www.ru.is/media/hr/skjol/default_white.png)]
+<img src="http://www.ru.is/media/hr/skjol/default_white.png" width="150" height="150" />
 
 | Students                  | Ssn         |
 |---------------------------|:-----------:|
@@ -12,6 +12,23 @@
 |Sveinn Björnsson           | 091085-2329 |
 |Þórdís Þórðardóttir        | 110961-5619 |
 
-## Inngangur
+## Abstract
 
-Þessi skýrsla inniheldur leiðbeiningar um hvernig á að spila leikinn.
+This manual is about how to set up and run the game after deploying.
+
+
+## Directions
+
+ADD INFORMATION HERE
+
+## Meginmál
+
+Forritið er hýst á github á slóðinni: https://github.com/HEX2016/tictactoe.git
+Hægt er að sjá sögu útgáfna á https://travis-ci.org/HEX2016/TicTacToe 
+Nauðsynlegt er að hafa gradle 3.1 sem er hægt að sækja í eftirfarandi skrefum:
+1.	Opna Git Bash í rótinni á TicTacToe/
+2.	Skrifa í Git Bash gluggann:
+a.	 curl -s https://get.sdkman.io | bash 
+b.	source "~/.sdkman/bin/sdkman-init.sh"
+c.	sdk install gradle 3.1
+3.	

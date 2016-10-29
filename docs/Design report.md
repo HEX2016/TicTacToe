@@ -1,4 +1,4 @@
-#TicTacToe hönnunarskýrsla
+#TicTacToe design report
 
 
 <img src="http://www.ru.is/media/hr/skjol/default_white.png" width="150" height="150" />
@@ -13,17 +13,33 @@
 |Sveinn Björnsson           | 091085-2329 |
 |Þórdís Þórðardóttir        | 110961-5619 |
 
-## Inngangur
+## abstract
 
-TicTacToe er forrit þar sem tveir leikmenn spila um að ná þremur "X" eða "O" í röð, í tvívíðu fylki.
-Verkefnið snýst um að hanna og hanna forrit þar sem leikurinn er spilaður.
+TicTacToe is a game where two players compete about getting three "X" or "O" in a row of a two-way array. The project is about designing and implementing the game.
 
-## Sýn verkefnisins
+## Project vision
 
-TicTacToe er einfaldur skipanalínu leikur fyrir tvo leikmenn sem vilja spila einfaldan tölvuleik.
-Ólíkt upprunalega leiknum þarf ekki blað og blýant.
-Þá heldur leikurinn utan um stigatöflu og einhverja sögu leikmannanna.
+The game has a simple command line interface for two players.
 
-## Kerfismynd
 
-## Klasarit
+## System implementation
+
+
+## Class overview
+
+1. Board
+..* Holds the board/fields for the game platform.
+..* Has methods for placing a player on field and checking if a player is placed on field.
+2. TicTacToeLogic
+..* Logic for the board.
+..* Has public methods API for gameplay.
+..* Checks after placing a player if he has won and returns it to the user interface (char)
+3. TicTacToe
+..* Gameplay class, has user interface with command input/output.
+..* Has instance of TicTacToeLogic and uses its API calls for playing the game.
+..* runs a input loop until all board places are busy or a player wins.
+..* prints out current board status after eacy play.
+4. WrongInputException
+..* Exception class to be thrown if wrong input is received by user.
+
+
