@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Winners.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">tictactoe</a> &gt; <span class="el_source">Winners.java</span></div><h1>Winners.java</h1><pre class="source lang-java linenums">package tictactoe;
+
+import java.util.Comparator;
+
+/**
+*	Winners class holds a name and how many times a player has won a game
+*
+*/
+public class Winners{
+	
+	private String name;
+	private int wins;
+
+	/**************************************************************
+	* Constructor Winners
+	*
+	* @param winnerName Name of winner
+	* @param winnerWins How many times a player has won
+	***************************************************************/
+<span class="nc" id="L20">	public Winners(String winnerName, int winnerWins){</span>
+<span class="nc" id="L21">		this.name = winnerName;</span>
+<span class="nc" id="L22">		this.wins = winnerWins;</span>
+<span class="nc" id="L23">	}</span>
+
+	/**************************************************************
+	*	Comparator for sorting the winners by how many wins they have in descenting order.
+	*
+	***************************************************************/
+<span class="nc" id="L29">	public static Comparator&lt;Winners&gt; WinnersMostWins = new Comparator&lt;Winners&gt;(){</span>
+		public int compare(Winners w1, Winners w2){
+<span class="nc" id="L31">			return w2.wins - w1.wins;</span>
+		}
+	};
+
+	/**************************************************************
+	* toString Override to be able to print a Winner with how many wins he has.
+	*
+	***************************************************************/
+	@Override
+	public String toString(){
+<span class="nc" id="L41">		return this.name + &quot;: &quot; + this.wins;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

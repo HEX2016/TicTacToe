@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TicDatabase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">tictactoe</a> &gt; <span class="el_source">TicDatabase.java</span></div><h1>TicDatabase.java</h1><pre class="source lang-java linenums">package tictactoe;
+
+import java.io.*;
+import java.util.*;
+
+<span class="nc" id="L6">public class TicDatabase {</span>
+<span class="nc" id="L7">	private String nameList = &quot;winners.txt&quot;;</span>
+<span class="nc" id="L8">	private FileWriter list = null;</span>
+
+	/**************************************************************
+	* insertName inserts a new name of winner to the winners list
+	* @param name Name of the current round winner
+	***************************************************************/
+	public void insertName(String name)
+	{
+		try{
+<span class="nc" id="L17">			File file = new File(nameList);</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">			if(file.createNewFile())</span>
+			{
+<span class="nc" id="L20">				System.out.println(&quot;Note: Create new db file.&quot;);</span>
+			}
+<span class="nc" id="L22">			BufferedWriter out = new BufferedWriter(new FileWriter(nameList, true));</span>
+<span class="nc" id="L23">			out.write(name+&quot;\n&quot;);</span>
+<span class="nc" id="L24">			out.close();</span>
+		}
+<span class="nc" id="L26">		catch(Exception ex)</span>
+		{
+<span class="nc" id="L28">			System.out.println(ex.getMessage());</span>
+<span class="nc" id="L29">		}</span>
+<span class="nc" id="L30">	}</span>
+
+	/**************************************************************
+	* getTopList() returns top 5 players list to show when game starts
+	*
+	* @return String with top 5 players in correct order (from private function)
+	***************************************************************/
+	public String getTopList()
+	{
+<span class="nc" id="L39">		File f = new File(nameList);</span>
+<span class="nc bnc" id="L40" title="All 4 branches missed.">		if(!f.exists() || f.isDirectory()) { </span>
+<span class="nc" id="L41">		    return &quot;No listed winner, win a game \nand be the first registered winner!&quot;;</span>
+		}
+
+<span class="nc" id="L44">		ArrayList&lt;String&gt; listi = new ArrayList&lt;String&gt;();</span>
+		String temp;
+		try{
+<span class="nc" id="L47">			FileReader fr = new FileReader(new File(nameList));</span>
+<span class="nc" id="L48">			BufferedReader br = new BufferedReader(fr);</span>
+
+<span class="nc bnc" id="L50" title="All 2 branches missed.">			while((temp = br.readLine()) != null){</span>
+<span class="nc" id="L51">				listi.add(temp);</span>
+			}
+		}
+<span class="nc" id="L54">		catch(Exception ex)</span>
+		{
+<span class="nc" id="L56">			System.out.println(ex.getMessage());</span>
+<span class="nc" id="L57">		}</span>
+
+<span class="nc" id="L59">		return groupBy(listi);</span>
+
+	}
+
+	/**************************************************************
+	* getTopList() returns top 5 players list to show when game starts
+	*
+	* @return String with top 5 players in correct order with line breaks between
+	* If no winners are registered, it will return an empty String.
+	***************************************************************/
+	private String groupBy(ArrayList&lt;String&gt; unordered){
+<span class="nc bnc" id="L70" title="All 2 branches missed.">		if (unordered.size() &lt; 1) return &quot;&quot;;</span>
+
+<span class="nc" id="L72">		ArrayList&lt;Winners&gt; sorted = new ArrayList&lt;Winners&gt;();</span>
+<span class="nc" id="L73">		Collections.sort(unordered);</span>
+
+<span class="nc" id="L75">		String temp = new String();</span>
+<span class="nc" id="L76">		int num = 0;</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">		for(String s: unordered){</span>
+			//System.out.print(s);
+<span class="nc bnc" id="L79" title="All 2 branches missed.">			if (s.equals(temp)){</span>
+				// same name, just increment
+<span class="nc" id="L81">				num++;</span>
+				//System.out.println(&quot; incremented&quot;);
+			}
+			else {
+				// new name, add the old one and setup counter
+<span class="nc" id="L86">				sorted.add(new Winners(temp, num));</span>
+<span class="nc" id="L87">				temp = s;</span>
+<span class="nc" id="L88">				num = 1;</span>
+				//System.out.println(&quot; reset&quot;);
+			}
+<span class="nc" id="L91">		}</span>
+<span class="nc" id="L92">		sorted.add(new Winners(temp, num));</span>
+
+		// Finish up the list and create String to return (top list)
+<span class="nc" id="L95">		Collections.sort(sorted, Winners.WinnersMostWins);</span>
+<span class="nc" id="L96">		String res = new String();</span>
+<span class="nc" id="L97">		int i = 0;</span>
+<span class="nc bnc" id="L98" title="All 2 branches missed.">		for (Winners s: sorted){</span>
+<span class="nc" id="L99">			res += s+&quot;\n&quot;;</span>
+<span class="nc" id="L100">			i++;</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">			if (i &gt;= 5) break;</span>
+<span class="nc" id="L102">		}</span>
+<span class="nc" id="L103">		return res;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

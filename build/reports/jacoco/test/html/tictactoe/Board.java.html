@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">tictactoe</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package tictactoe;
+
+public class Board {
+<span class="fc" id="L4">	private char[][] board = new char[3][3];</span>
+    private int SIZE;
+
+	/**
+	* Initializes the board, set all fields as '-'
+	* automatically run by the constructor.
+	*/
+	private void initialize(){
+<span class="fc bfc" id="L12" title="All 2 branches covered.">		for (int i = 0; i &lt; SIZE; i++)</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">			for (int j = 0; j &lt; SIZE; j++)</span>
+<span class="fc" id="L14">				this.board[i][j] = '-';</span>
+<span class="fc" id="L15">	}</span>
+
+	/** 
+	 * Constructor for Board
+	 */
+<span class="fc" id="L20">	public Board(int size){</span>
+<span class="fc" id="L21">		this.SIZE = size;</span>
+<span class="fc" id="L22">		initialize();</span>
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * Let user choose the next field
+	 * 
+	 * @param row which row you want to place your mark
+	 * @param column which column you want to place your mark
+	 * @param value is the character for the player (X / O)
+	 * @throws WrongInputException if row/column is out of bounds, already occupied or if value is neither X or O.
+	 */
+	public void setField(int row, int column, char value) throws WrongInputException{
+
+<span class="pc bpc" id="L35" title="3 of 8 branches missed.">		if (row &lt; 0 || row &gt;= SIZE || column &lt; 0 || column &gt;=SIZE){</span>
+<span class="fc" id="L36">			throw new WrongInputException(&quot;Index out of bounds&quot;);</span>
+		}
+		
+<span class="fc bfc" id="L39" title="All 2 branches covered.">		if(this.board[row][column] != '-'){</span>
+<span class="fc" id="L40">			throw new WrongInputException(&quot;Field already in use&quot;);</span>
+		}
+
+<span class="fc bfc" id="L43" title="All 4 branches covered.">		if(!(value == 'X' || value == 'O')){</span>
+<span class="fc" id="L44">			throw new WrongInputException(&quot;Wrong player identifier, only X/O accepted&quot;);</span>
+		}
+
+<span class="fc" id="L47">		this.board[row][column] = value;</span>
+<span class="fc" id="L48">	}</span>
+
+	/**
+	 * Returns the symbol for given field, if it is available (-) or occupied by another player (O or X)
+	 * 
+	 * @param row which row you want to check
+	 * @param column which column you want to check
+	 * @return the symbol for the given field
+	 */
+	public char getField(int row, int column) {
+<span class="fc" id="L58">		return this.board[row][column];</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

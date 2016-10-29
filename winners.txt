@@ -16,3 +16,5 @@ Egill
 Jon
 GummiStori
 GummiStori
+Gummi
+Egill

@@ -56,7 +56,6 @@ public class TicDatabase {
 			System.out.println(ex.getMessage());
 		}
 
-
 		return groupBy(listi);
 
 	}
