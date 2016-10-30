@@ -21,7 +21,7 @@ This manual contains instruction how to get the game and play it.
     To download and install visit this link: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 
-## Get the game and play it>
+## Get the game and play it
 
 1. Download the newest version of TicTacToe.zip here: https://github.com/HEX2016/TicTacToe/releases
   a. Find the "Downloads" under the newest version.
