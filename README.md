@@ -30,7 +30,7 @@
 ### git push -u origin NyttBranch
 
 # Á github:
-### Við push kemur tilkynning fram á github – you recently pushed branches. Smella á Compare and pull branches –  smella á Create pull request.  Við það hrekkur í gang test á Travis og sýnir niðurstöðu á github. Ef allt er fínt er hægt að smella á Merge pull request.
+### Við push kemur tilkynning fram á github – you recently pushed branches. Smella á Compare and pull branches –  smella á Create pull request.  Við það hrekkur í gang test á Travis og sýnir niðurstöðu á github. Ef allt er fínt er hægt að smella á Merge pull  request.
 
 ### Við erum með protection á master svo það þarf að staðfesta merge.  Eftir þetta má eyða þessu branch-i, boðið er upp á það eftir merge. 
 
