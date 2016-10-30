@@ -40,7 +40,8 @@ TicTacToe
 Forritið er hýst á github á slóðinni: https://github.com/HEX2016/tictactoe.git
 Hægt er að sjá sögu útgáfna á https://travis-ci.org/HEX2016/TicTacToe 
 Nauðsynlegt er að hafa gradle 3.1 sem er hægt að sækja í eftirfarandi skrefum:
-1.	Opna Git Bash í rótinni á TicTacToe/
+
+1. Opna Git Bash í rótinni á TicTacToe/
 2.	Skrifa í Git Bash gluggann:
   a.	 curl -s https://get.sdkman.io | bash 
   b.	source "~/.sdkman/bin/sdkman-init.sh"
