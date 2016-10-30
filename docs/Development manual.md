@@ -22,6 +22,7 @@ This game is a simple version of Tictactoe built __loosly coupled__ using __test
 #### Source control
 
 This project uses Git with GitHub for source control and in development we use Git Shell to manage the project.
+
 The project enforces pull requests on master. Project generally uses Git command line except in the case of pull requests.
 
 ##### Clone the project
@@ -51,11 +52,13 @@ GitHub is used to create pull requests. When a developer goes on GitHub after yo
 #### Build enviroment
 
 Gradle is used to build and test the project on every change. On pushing to GitHub, [Travis CI](https://travis-ci.org/HEX2016/TicTacToe) will check the just pushed version and create an executable to be able to run the game.
+
 After each push to GitHub it is possible to see code coverage by going to the project's [codecov.io page](https://codecov.io/gh/HEX2016/TicTacToe).
 
 #### Dependencies
 
 Java is required to run and build code locally. The Java Development Kit is downloadable from [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+
 Git installatoin is required to get access to the project's repositories.
 
 Travis CI is an application run og GitHub and detects when a push occurs. Then it will test the new version and deploy an executable .jar file to the final destination.
