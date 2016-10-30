@@ -13,5 +13,4 @@ if [ "$TRAVIS_REPO_SLUG" == "HEX2016/TicTacToe" ] && [ "$TRAVIS_JDK_VERSION" == 
   git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
   echo -e "Published Javadoc to gh-pages.\n"
-  
 fi
