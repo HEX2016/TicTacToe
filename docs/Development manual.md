@@ -59,7 +59,7 @@ After each push to GitHub it is possible to see code coverage by going to the pr
 
 Java is required to run and build code locally. The Java Development Kit is downloadable from [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-Git installatoin is required to get access to the project's repositories.
+Git installation is required to get access to the project's repositories.
 
 Travis CI is an application run og GitHub and detects when a push occurs. Then it will test the new version and deploy an executable .jar file to the final destination.
 
