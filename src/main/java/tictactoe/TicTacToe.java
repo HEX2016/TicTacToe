@@ -10,7 +10,7 @@ public class TicTacToe {
 		while(true){
 			TicTacToeLogic game = new TicTacToeLogic(3);
 			
-			System.out.println("");
+			System.out.println(" ");
 			System.out.println("For inspiration, here is the top 5 winners list:");
 			System.out.println(db.getTopList());
 
