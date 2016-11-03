@@ -18,3 +18,5 @@ GummiStori
 GummiStori
 Gummi
 Egill
+Palli
+Gummi
